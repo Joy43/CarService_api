@@ -40,13 +40,12 @@ The API is deployed and accessible at:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/bike-service-api.git
-   cd bike-service-api
-   ```
+   git clone https://github.com/Joy43/CarService_api.git
+   cd CarService_api
 
 2. **Install Dependencies**
    ```bash
-   npm install
+   yarn install
    ```
 
 3. **Configure Environment Variables**  
@@ -62,8 +61,8 @@ The API is deployed and accessible at:
 
 5. **Start the Server**
    ```bash
-   npm run dev  # For development
-   npm start    # For production
+   yarn run dev  # For development
+   yarn start    # For production
    ```
 
 6. **Test Endpoints**  
@@ -111,4 +110,4 @@ Example error format:
 
 ## License
 
-MIT License. See `LICENSE` for details.
+ssjoy. See `LICENSE` for details.
