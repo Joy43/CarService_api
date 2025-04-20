@@ -29,7 +29,7 @@ const getSinglebikeId=async(req:Request,res:Response)=>{
         sendResponse(res,{
             success:true,
             statusCode:status.CREATED,
-            message:"bike retrives sucessfully",
+            message:"Bikes fetched successfully",
             data:singlebikeresult
         });
 
@@ -52,7 +52,7 @@ const getAllBike=async(req:Request,res:Response)=>{
             sendResponse(res, {
                 success: true,
                 statusCode: status.OK,
-                message: 'bikes retrivals successfully',
+                message: 'Bikes fetched successfully',
                 data: allbikes
               });
 };

@@ -10,7 +10,7 @@ const createCoustomer=async(req:Request,res:Response)=>{
     sendResponse(res,{
         success:true,
         statusCode:status.CREATED,
-        message:"account create",
+        message:"Customer created successfully",
         data:result
 
     })
@@ -23,7 +23,7 @@ const getSingleCustomerId=async(req:Request,res:Response)=>{
 return sendResponse(res,{
     success: false,
     statusCode: status.NOT_FOUND,
-    message: 'Book not found',
+    message: 'car not found',
     data: null,
 });
 
@@ -32,7 +32,7 @@ return sendResponse(res,{
     sendResponse(res, {
         success: true,
         statusCode: status.OK,
-        message: 'user retrieved successfully',
+        message: 'Customer fetched successfully',
         data: customerresult
       });
 };
@@ -54,7 +54,7 @@ const getAllCustomer=async(req:Request,res:Response)=>{
             sendResponse(res, {
                 success: true,
                 statusCode: status.OK,
-                message: 'user retrieved successfully',
+                message: 'Customers fetched successfully',
                 data: Allcutomer
               });
 };
@@ -77,7 +77,7 @@ const UpdateCustomers=async(req:Request,res:Response)=>{
             sendResponse(res, {
                 success: true,
                 statusCode: status.OK,
-                message: 'update customer  successfully',
+                message: 'Customer update successfully',
                 data: updatecustomer
               });
 
@@ -101,7 +101,7 @@ const deleteCustomer=async(req:Request,res:Response)=>{
             sendResponse(res, {
                 success: true,
                 statusCode: status.OK,
-                message: 'delete successfully',
+                message: 'Customer deleted successfully',
                 data: result
               });
 } 
