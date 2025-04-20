@@ -5,4 +5,8 @@ const express_1 = require("express");
 const customer_controller_1 = require("./customer.controller");
 const router = (0, express_1.Router)();
 router.post('/', customer_controller_1.customerController.createCoustomer);
+router.get('/:customerId', customer_controller_1.customerController.getSingleCustomerId);
+router.get('/', customer_controller_1.customerController.getAllCustomer);
+router.put('/:customerId', customer_controller_1.customerController.UpdateCustomers);
+router.delete('/:customerId', customer_controller_1.customerController.deleteCustomer);
 exports.customerRoute = router;

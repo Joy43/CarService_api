@@ -63,7 +63,7 @@ const getAllCustomer=async(req:Request,res:Response)=>{
 const UpdateCustomers=async(req:Request,res:Response)=>{
     const {customerId}=req.params;
     const updatecustomer=await customerService.UpdateCustomers(customerId,req.body);
-    const Allcutomer=await customerService.getAllCustomers(req.body);
+   
     if(!updatecustomer){
         return sendResponse(res,{
             success: false,

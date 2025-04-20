@@ -18,13 +18,14 @@ app.get("/", (req, res) => {
     console.log("Response sent");
 });
 // --------------route common-------------
-app.use('/api/v1', routes_1.default);
+app.use('/api', routes_1.default);
 // -------------- error handle---------
 app.use((err, req, res, next) => {
     res.status(http_status_1.default.INTERNAL_SERVER_ERROR).send({
         success: false,
         message: "api end point is not found",
-        error: {
+        status: http_status_1.default.NOT_FOUND,
+        stack: {
             path: req.originalUrl,
             message: "your requested path is not found !"
         }

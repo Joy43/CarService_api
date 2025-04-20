@@ -12,100 +12,102 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.customerController = void 0;
-const customer_service_1 = require("./customer.service");
-const sendResponse_1 = require("../../utils/sendResponse");
+exports.BikeController = void 0;
 const http_status_1 = __importDefault(require("http-status"));
-// -----------create -------------
-const createCoustomer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield customer_service_1.customerService.createCustomer(req.body);
+const sendResponse_1 = require("../../utils/sendResponse");
+const bike_service_1 = require("./bike.service");
+// --------create bike------------
+const CreateBike = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(req.body);
+    const createbike = yield bike_service_1.BikeService.CreateBikes(req.body);
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.CREATED,
-        message: "account create",
-        data: result
+        message: "bike create sucessfully",
+        data: createbike
     });
 });
-// --------getsingle with id----------
-const getSingleCustomerId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { customerId } = req.params;
-    const customerresult = yield customer_service_1.customerService.getSingleCustomerId(customerId);
-    if (!customerresult) {
+// ------------------getbike id-------------
+const getSinglebikeId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    const singlebikeresult = yield bike_service_1.BikeService.getSinglebikeId(id);
+    if (!singlebikeresult) {
+        (0, sendResponse_1.sendResponse)(res, {
+            success: false,
+            statusCode: http_status_1.default.CREATED,
+            message: " not sucessfully",
+            data: null
+        });
+    }
+    ;
+    (0, sendResponse_1.sendResponse)(res, {
+        success: true,
+        statusCode: http_status_1.default.CREATED,
+        message: "bike retrives sucessfully",
+        data: singlebikeresult
+    });
+});
+// --------get all bike
+const getAllBike = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(req.body);
+    const allbikes = yield bike_service_1.BikeService.getAllBikes();
+    if (!allbikes) {
         return (0, sendResponse_1.sendResponse)(res, {
             success: false,
             statusCode: http_status_1.default.NOT_FOUND,
-            message: 'Book not found',
+            message: 'bike not found',
             data: null,
         });
     }
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.OK,
-        message: 'user retrieved successfully',
-        data: customerresult
-    });
-});
-// -------------get all user------------
-const getAllCustomer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const Allcutomer = yield customer_service_1.customerService.getAllCustomers(req.body);
-    if (!Allcutomer) {
-        return (0, sendResponse_1.sendResponse)(res, {
-            success: false,
-            statusCode: http_status_1.default.NOT_FOUND,
-            message: 'Book not found',
-            data: null,
-        });
-    }
-    (0, sendResponse_1.sendResponse)(res, {
-        success: true,
-        statusCode: http_status_1.default.OK,
-        message: 'user retrieved successfully',
-        data: Allcutomer
+        message: 'bikes retrivals successfully',
+        data: allbikes
     });
 });
 // ------------update customer--------
-const UpdateCustomers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const UpdateBikes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { customerId } = req.params;
-    const updatecustomer = yield customer_service_1.customerService.UpdateCustomers(customerId, req.body);
-    if (!updatecustomer) {
+    const updatebike = yield bike_service_1.BikeService.UpdateBike(customerId, req.body);
+    if (!updatebike) {
         return (0, sendResponse_1.sendResponse)(res, {
             success: false,
             statusCode: http_status_1.default.NOT_FOUND,
-            message: 'customer not found',
+            message: 'BIKE not found',
             data: null,
         });
     }
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.OK,
-        message: 'update customer  successfully',
-        data: updatecustomer
+        message: 'update BIKE  successfully',
+        data: updatebike
     });
 });
 // ----------delete customer----------
-const deleteCustomer = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { customerId } = req.params;
-    const result = yield customer_service_1.customerService.deleteCustomer(customerId);
+const DeleteBike = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { bikeId } = req.params;
+    const result = yield bike_service_1.BikeService.Deletebike(bikeId);
     if (!result) {
         return (0, sendResponse_1.sendResponse)(res, {
             success: false,
             statusCode: http_status_1.default.NOT_FOUND,
-            message: 'customer not found',
+            message: 'Bike not found',
             data: null,
         });
     }
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.OK,
-        message: 'delete successfully',
+        message: 'bike delete successfully',
         data: result
     });
 });
-exports.customerController = {
-    createCoustomer,
-    getSingleCustomerId,
-    getAllCustomer,
-    UpdateCustomers,
-    deleteCustomer
+exports.BikeController = {
+    CreateBike,
+    getSinglebikeId,
+    DeleteBike,
+    UpdateBikes,
+    getAllBike
 };
