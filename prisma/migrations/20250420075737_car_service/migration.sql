@@ -1,7 +1,4 @@
 -- CreateEnum
-CREATE TYPE "Brands" AS ENUM ('Honda', 'Yamaha', 'Royal', 'Discover');
-
--- CreateEnum
 CREATE TYPE "ServiceStatus" AS ENUM ('pending', 'in_progress', 'done');
 
 -- CreateTable
@@ -19,7 +16,7 @@ CREATE TABLE "customers" (
 -- CreateTable
 CREATE TABLE "bikes" (
     "bikeId" TEXT NOT NULL,
-    "brand" "Brands" NOT NULL,
+    "brand" TEXT NOT NULL,
     "model" TEXT NOT NULL,
     "year" INTEGER NOT NULL,
     "customerId" TEXT NOT NULL,

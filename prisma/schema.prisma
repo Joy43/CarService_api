@@ -25,7 +25,7 @@ model Customer {
 // ---------- Bike Model ----------
 model Bike {
   bikeId     String   @id @default(uuid()) 
-  brand      Brands
+  brand     String
   model      String
   year       Int
   customerId String   
@@ -36,12 +36,7 @@ model Bike {
   @@map("bikes")
 }
 
-enum Brands{
-  Honda
-  Yamaha
-  Royal
-  Discover
-}
+
 
 // ---------- Service Record Model ----------
 model Service {
