@@ -74,22 +74,22 @@ The API is deployed and accessible at:
 ## API Endpoints
 
 ### Customers
-- `POST /api/customers` – Create a customer
-- `GET /api/customers` – Get all customers
-- `GET /api/customers/:id` – Get a customer by ID
-- `PUT /api/customers/:id` – Update a customer
-- `DELETE /api/customers/:id` – Delete a customer
+- `POST https://assingment-8-jade.vercel.app/api/customers` – Create a customer
+- `GET https://assingment-8-jade.vercel.app/api/customers` – Get all customers
+- `GET https://assingment-8-jade.vercel.app/api/customers/:id` – Get a customer by ID
+- `PUT https://assingment-8-jade.vercel.app/api/customers/:id` – Update a customer
+- `DELETE https://assingment-8-jade.vercel.app/api/customers/:id` – Delete a customer
 
 ### Bikes
-- `POST /api/bikes` – Add a bike
-- `GET /api/bikes` – Get all bikes
-- `GET /api/bikes/:id` – Get a bike by ID
+- `POST https://assingment-8-jade.vercel.app/api/bikes` – Add a bike
+- `GET https://assingment-8-jade.vercel.app/api/bikes` – Get all bikes
+- `GET https://assingment-8-jade.vercel.app/api/bikes/:id` – Get a bike by ID
 
 ### Services
-- `POST /api/services` – Create a service record
-- `GET /api/services` – Get all service records
-- `GET /api/services/:id` – Get a service by ID
-- `PUT /api/services/:id/complete` – Mark service as completed
+- `POST https://assingment-8-jade.vercel.app/api/services` – Create a service record
+- `GET https://assingment-8-jade.vercel.app/api/services` – Get all service records
+- `GET https://assingment-8-jade.vercel.app/api/services/:id` – Get a service by ID
+- `PUT https://assingment-8-jade.vercel.app/api/services/6dffeadc-0496-4caa-88df-68a9b63f6a40/complete` – Mark service as completed
 - `GET /api/services/status` – Get overdue/pending services
 
 ---
