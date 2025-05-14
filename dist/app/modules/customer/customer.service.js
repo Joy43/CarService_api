@@ -19,7 +19,7 @@ const createCustomer = (payload) => __awaiter(void 0, void 0, void 0, function* 
     const customerData = {
         name: payload.name,
         email: payload.email,
-        phoneNumber: payload.phoneNumber,
+        phone: payload.phone,
     };
     try {
         const result = yield prismaClient_1.default.customer.create({
@@ -57,6 +57,7 @@ const getAllCustomers = (customerId) => __awaiter(void 0, void 0, void 0, functi
     catch (err) {
         console.log(err);
     }
+    ;
 });
 // ----------update --------------
 const UpdateCustomers = (customerId, payload) => __awaiter(void 0, void 0, void 0, function* () {

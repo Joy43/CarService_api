@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const http_status_1 = __importDefault(require("http-status"));
 const cors_1 = __importDefault(require("cors"));
 const routes_1 = __importDefault(require("./app/routes"));
 const app = (0, express_1.default)();
@@ -20,15 +19,15 @@ app.get("/", (req, res) => {
 // --------------route common-------------
 app.use('/api', routes_1.default);
 // -------------- error handle---------
-app.use((err, req, res, next) => {
-    res.status(http_status_1.default.INTERNAL_SERVER_ERROR).send({
-        success: false,
-        message: "api end point is not found",
-        status: http_status_1.default.NOT_FOUND,
-        stack: {
-            path: req.originalUrl,
-            message: "your requested path is not found !"
-        }
-    });
-});
+// app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+//     res.status(status.INTERNAL_SERVER_ERROR).send({
+//         success: false,
+//         message:  "api end point is not found",
+//         status:status.NOT_FOUND,
+//         stack: {
+//             path:req.originalUrl,
+//             message:"your requested path is not found !"
+//         }
+//     });
+// });
 exports.default = app;

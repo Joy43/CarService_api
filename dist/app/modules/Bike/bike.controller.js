@@ -43,7 +43,7 @@ const getSinglebikeId = (req, res) => __awaiter(void 0, void 0, void 0, function
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.CREATED,
-        message: "bike retrives sucessfully",
+        message: "Bikes fetched successfully",
         data: singlebikeresult
     });
 });
@@ -62,7 +62,7 @@ const getAllBike = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.OK,
-        message: 'bikes retrivals successfully',
+        message: 'Bikes fetched successfully',
         data: allbikes
     });
 });

@@ -20,16 +20,16 @@ app.get("/", (req, res) => {
 app.use('/api',router);
 
 // -------------- error handle---------
-app.use((err: any, req: Request, res: Response, next: NextFunction) => {
-    res.status(status.INTERNAL_SERVER_ERROR).send({
-        success: false,
-        message:  "api end point is not found",
-        status:status.NOT_FOUND,
-        stack: {
-            path:req.originalUrl,
-            message:"your requested path is not found !"
-        }
-    });
-});
+// app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+//     res.status(status.INTERNAL_SERVER_ERROR).send({
+//         success: false,
+//         message:  "api end point is not found",
+//         status:status.NOT_FOUND,
+//         stack: {
+//             path:req.originalUrl,
+//             message:"your requested path is not found !"
+//         }
+//     });
+// });
 
 export default app;

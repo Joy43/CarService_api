@@ -8,7 +8,7 @@ const createCustomer = async (payload:any) => {
   const customerData = {
     name: payload.name,
     email: payload.email,
-    phoneNumber: payload.phoneNumber,
+    phone: payload.phone,
    
   };
 

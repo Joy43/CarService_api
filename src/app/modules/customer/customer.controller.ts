@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { customerService } from "./customer.service";
 import { sendResponse } from "../../utils/sendResponse";
 import status from "http-status";
-import prisma from '../../utils/prismaClient';
+
 // -----------create -------------
 const createCoustomer=async(req:Request,res:Response)=>{
     const result=await customerService.createCustomer(req.body);

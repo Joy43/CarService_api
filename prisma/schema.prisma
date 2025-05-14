@@ -13,7 +13,7 @@ model Customer {
   customerId String   @id @default(uuid()) 
   name       String
   email      String   @unique
-  phoneNumber String  @unique
+  phone      String   
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
@@ -31,7 +31,7 @@ model Bike {
   customerId String   
   customer   Customer @relation(fields: [customerId], references: [customerId])
 
-  service   Service[]
+  serviceRecord   ServiceRecord[]
 
   @@map("bikes")
 }
@@ -39,7 +39,7 @@ model Bike {
 
 
 // ---------- Service Record Model ----------
-model Service {
+model ServiceRecord {
   serviceId      String        @id @default(uuid()) 
   bikeId         String     
   bike           Bike          @relation(fields: [bikeId], references: [bikeId])
@@ -47,7 +47,6 @@ model Service {
   completionDate DateTime?
   description    String
   status         ServiceStatus
-
   @@map("service_records")
 }
 

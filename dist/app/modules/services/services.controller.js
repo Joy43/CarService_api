@@ -18,12 +18,12 @@ const sendResponse_1 = require("../../utils/sendResponse");
 const http_status_1 = __importDefault(require("http-status"));
 // -------create service-------------
 const CreateService = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const createservice = yield services_service_1.ServicFunctions.CreateService(req.body);
+    const result = yield services_service_1.ServicFunctions.CreateService(req.body);
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.CREATED,
         message: "Service record created successfully",
-        data: createservice
+        data: result
     });
 });
 // -----------get all service-----------

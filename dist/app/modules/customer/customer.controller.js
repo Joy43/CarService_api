@@ -23,7 +23,7 @@ const createCoustomer = (req, res) => __awaiter(void 0, void 0, void 0, function
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.CREATED,
-        message: "account create",
+        message: "Customer created successfully",
         data: result
     });
 });
@@ -35,14 +35,14 @@ const getSingleCustomerId = (req, res) => __awaiter(void 0, void 0, void 0, func
         return (0, sendResponse_1.sendResponse)(res, {
             success: false,
             statusCode: http_status_1.default.NOT_FOUND,
-            message: 'Book not found',
+            message: 'car not found',
             data: null,
         });
     }
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.OK,
-        message: 'user retrieved successfully',
+        message: 'Customer fetched successfully',
         data: customerresult
     });
 });
@@ -60,7 +60,7 @@ const getAllCustomer = (req, res) => __awaiter(void 0, void 0, void 0, function*
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.OK,
-        message: 'user retrieved successfully',
+        message: 'Customers fetched successfully',
         data: Allcutomer
     });
 });
@@ -79,7 +79,7 @@ const UpdateCustomers = (req, res) => __awaiter(void 0, void 0, void 0, function
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.OK,
-        message: 'update customer  successfully',
+        message: 'Customer update successfully',
         data: updatecustomer
     });
 });
@@ -98,7 +98,7 @@ const deleteCustomer = (req, res) => __awaiter(void 0, void 0, void 0, function*
     (0, sendResponse_1.sendResponse)(res, {
         success: true,
         statusCode: http_status_1.default.OK,
-        message: 'delete successfully',
+        message: 'Customer deleted successfully',
         data: result
     });
 });

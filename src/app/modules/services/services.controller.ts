@@ -4,12 +4,12 @@ import { sendResponse } from "../../utils/sendResponse";
 import status from "http-status";
 // -------create service-------------
 const CreateService=async(req:Request,res:Response)=>{
-    const createservice=await ServicFunctions.CreateService(req.body);
+    const result=await ServicFunctions.CreateService(req.body);
     sendResponse(res,{
-        success: true,
-        statusCode: status.CREATED,
-        message:"Service record created successfully",
-        data: createservice
+    success: true,
+    statusCode: status.CREATED,
+    message:"Service record created successfully",
+    data: result
     })
 };
 
